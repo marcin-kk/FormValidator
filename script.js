@@ -8,19 +8,22 @@ const popup = document.querySelector(".popup")
 
 const showError = (input, msg) => {
 	const formBox = input.parentElement
-    const errorMsg = formBox.querySelector('.error-text')
-    formBox.classList.add('error')
-    errorMsg.textContent = msg
+	const errorMsg = formBox.querySelector(".error-text")
+	formBox.classList.add("error")
+	errorMsg.textContent = msg
+}
 
+const cleanError = input => {
+	const formBox = input.parentElement
+	formBox.classList.remove("error")
 }
 
 const checkForm = input => {
 	input.forEach(el => {
 		if (el.value === "") {
-			console.log("error")
 			showError(el, el.placeholder)
 		} else {
-			console.log("ok")
+			cleanError(el)
 		}
 	})
 }
