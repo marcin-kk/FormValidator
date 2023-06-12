@@ -14,6 +14,7 @@ body {
 }
 
 .wrapper {
+    margin-top: 100px;
 	width: 40%;
 	background-color: #f6fa70;
 	box-shadow: 0 0 10px #ff0060;
@@ -88,4 +89,28 @@ h1 {
 .send:hover,
 .close:hover {
 	background-color: #004ba1;
+}
+
+.popup {
+    background-color: white;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: 2px solid #000;
+
+}
+
+.popup p {
+    font-size: 28px;
+}
+
+.popup .close {
+    margin-top: 20px;
 }
