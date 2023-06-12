@@ -28,14 +28,34 @@ const checkForm = input => {
 	})
 }
 
+const checkLength = (input, min) => {
+	if (input.value.length < min) {
+		showError(
+			input,
+			`${username.previousElementSibling.htmlFor} needs to have at least ${min} characters`
+		)
+	}
+}
+
+const checkMatchPasswords = (password1, password2) => {
+    if (password1.value !== password2.value) {
+        showError(pass2,'Passwords do not match' )
+    }
+
+}
+
 sendBtn.addEventListener("click", e => {
 	e.preventDefault()
 	checkForm([username, pass, pass2, email])
+	checkLength(username, 3)
+	checkLength(pass, 8)
+    checkMatchPasswords(pass, pass2)
 })
 
 clearBtn.addEventListener("click", e => {
 	e.preventDefault()
 	;[username, pass, pass2, email].forEach(el => {
 		el.value = ""
+		cleanError(el)
 	})
 })
