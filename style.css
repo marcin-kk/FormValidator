@@ -42,4 +42,28 @@ h1 {
 	width: 100%;
 	padding: 10px;
 	font-size: 16px;
+    border: 1px solid gray;
+    border-radius: 5px;
 }
+
+/* .error to be controlled by JS: */
+.form-box.error input {
+    border: 1px solid #FF0060;
+    background-color: rgba(255, 0, 96, 0.1);
+
+}
+
+.form-box .error-text {
+    margin: 5px 0 0 10px;
+    font-size: 14px;
+    color: #FF0060;
+    visibility: hidden;
+
+}
+
+.form-box.error .error-text {
+    visibility: visible;
+}
+
+
+
