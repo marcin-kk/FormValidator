@@ -1,5 +1,45 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #00dfa2;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+	width: 40%;
+	background-color: #f6fa70;
+	box-shadow: 0 0 10px #ff0060;
+}
+
+form {
+	padding: 40px;
+	font-size: 20px;
+}
+
+h1 {
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.form-box {
+	margin-bottom: 15px;
+}
+
+.form-box label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.form-box input {
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
 }
