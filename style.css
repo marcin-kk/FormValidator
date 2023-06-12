@@ -10,7 +10,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	background-color: #00dfa2;
-    font-family: 'Montserrat', sans-serif;
+	font-family: "Montserrat", sans-serif;
 }
 
 .wrapper {
@@ -42,28 +42,50 @@ h1 {
 	width: 100%;
 	padding: 10px;
 	font-size: 16px;
-    border: 1px solid gray;
-    border-radius: 5px;
+	border: 1px solid gray;
+	border-radius: 5px;
 }
 
 /* .error to be controlled by JS: */
 .form-box.error input {
-    border: 1px solid #FF0060;
-    background-color: rgba(255, 0, 96, 0.1);
-
+	border: 1px solid #ff0060;
+	background-color: rgba(255, 0, 96, 0.1);
 }
 
 .form-box .error-text {
-    margin: 5px 0 0 10px;
-    font-size: 14px;
-    color: #FF0060;
-    visibility: hidden;
-
+	margin: 5px 0 0 10px;
+	font-size: 14px;
+	color: #ff0060;
+	visibility: hidden;
 }
 
 .form-box.error .error-text {
-    visibility: visible;
+	visibility: visible;
 }
 
+.control-buttons {
+	display: flex;
+	justify-content: flex-end;
+}
 
+.clear,
+.send,
+.close {
+	display: block;
+	padding: 10px 20px;
+	margin-left: 10px;
+	width: 25%;
+	font-size: 18px;
+	background: #0079ff;
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
 
+.clear:hover,
+.send:hover,
+.close:hover {
+	background-color: #004ba1;
+}
