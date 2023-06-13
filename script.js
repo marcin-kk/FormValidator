@@ -32,7 +32,7 @@ const checkLength = (input, min) => {
 	if (input.value.length < min) {
 		showError(
 			input,
-			`${username.previousElementSibling.htmlFor} needs to have at least ${min} characters`
+			`${input.previousElementSibling.htmlFor} needs to have at least ${min} characters`
 		)
 	}
 }
@@ -48,9 +48,24 @@ const checkEmail = email => {
 		/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 	if (regEx.test(email.value)) {
-	cleanError(email)
+		cleanError(email)
 	} else {
-		showError(email, 'Incorrect email format')
+		showError(email, "Incorrect email format")
+	}
+}
+
+const checkErrors = () => {
+	const allFormBoxes = document.querySelectorAll(".form-box")
+	let errorCount = 0
+
+	allFormBoxes.forEach(el => {
+		if (el.classList.contains("error")) {
+			errorCount++
+		}
+	})
+
+	if (errorCount === 0) {
+		popup.classList.add("show-popup")
 	}
 }
 
@@ -61,6 +76,7 @@ sendBtn.addEventListener("click", e => {
 	checkLength(pass, 8)
 	checkMatchPasswords(pass, pass2)
 	checkEmail(email)
+	checkErrors()
 })
 
 clearBtn.addEventListener("click", e => {
