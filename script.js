@@ -38,10 +38,20 @@ const checkLength = (input, min) => {
 }
 
 const checkMatchPasswords = (password1, password2) => {
-    if (password1.value !== password2.value) {
-        showError(pass2,'Passwords do not match' )
-    }
+	if (password1.value !== password2.value) {
+		showError(pass2, "Passwords do not match")
+	}
+}
 
+const checkEmail = email => {
+	const regEx =
+		/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+	if (regEx.test(email.value)) {
+	cleanError(email)
+	} else {
+		showError(email, 'Incorrect email format')
+	}
 }
 
 sendBtn.addEventListener("click", e => {
@@ -49,7 +59,8 @@ sendBtn.addEventListener("click", e => {
 	checkForm([username, pass, pass2, email])
 	checkLength(username, 3)
 	checkLength(pass, 8)
-    checkMatchPasswords(pass, pass2)
+	checkMatchPasswords(pass, pass2)
+	checkEmail(email)
 })
 
 clearBtn.addEventListener("click", e => {
